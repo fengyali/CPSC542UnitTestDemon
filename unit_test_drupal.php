@@ -38,13 +38,13 @@ class DrupalCommonTest extends PHPUnit_Framework_Testcase {
 		echo "Running test case 1...\n";
 
 		// Configuration for this test case.
-		$input_url = "http://www.baidu.com/baidu?cl=3&tn=sitehao123_03&fr=top1000&noise=&ref=91helper";
+		$input_url = "http://www.baidu.com/baidu?cl=3&tn=sitehao123_03&fr=top1000&noise=&ref=91helper#head3";
 		$output_path = "http://www.baidu.com/baidu";
 		$output_query = array("cl"=>"3","tn"=>"sitehao123_03","fr"=>"top1000","ref"=>"91helper","noise"=>"");
-		$output_fragment = "";
+		$output_fragment = "head3";
 
 		$received = drupal_parse_url($input_url);
-		//var_dump($received);
+		var_dump($received);
 		
 		//Assertions
 		$this->assertEquals($received["path"] ,$output_path);
